@@ -5,6 +5,16 @@
     <a href="https://github.com/go-kratos/blades/blob/main/LICENSE"><img src="https://img.shields.io/github/license/go-kratos/blades" alt="License"></a>
 </p>
 
+> **⚠️ 这是 [go-kratos/blades](https://github.com/go-kratos/blades) 的独立 Fork，用于个人定制开发。**
+> 
+> **主要改动方向：**
+> - 推理内容（reasoning_content）回传支持
+> - 会话状态注入与持久化
+> - 对话历史序列化/反序列化
+> - 与上游保持独立演进，不接受合并
+>
+> **原项目许可证：** MIT
+
 ## Blades
 Blades is a multimodal AI Agent framework for the Go language, supporting custom models, tools, memory, middleware, etc. It is suitable for multi-turn conversations, chain-of-thought reasoning, and structured output, among other use cases.
 > The name originates from: The game *God of War*, set against the backdrop of Greek mythology, tells the adventure story of Kratos transforming from a mortal into the God of War and embarking on a god-slaying rampage. The Blades are Kratos's iconic weapons.
