@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	bladeskills "github.com/go-kratos/blades/skills"
-	bladestools "github.com/go-kratos/blades/tools"
+	bladeskills "github.com/CycleZero/blades/skills"
+	bladestools "github.com/CycleZero/blades/tools"
 )
 
 type captureModel struct {

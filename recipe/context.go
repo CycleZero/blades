@@ -3,9 +3,9 @@ package recipe
 import (
 	"fmt"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/context/summary"
-	"github.com/go-kratos/blades/context/window"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/context/summary"
+	"github.com/CycleZero/blades/context/window"
 )
 
 // buildContextCompressor constructs a blades.ContextCompressor from a ContextSpec.

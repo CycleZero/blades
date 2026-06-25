@@ -7,7 +7,7 @@ import (
 	wx "github.com/daemon365/weixin-clawbot"
 	"github.com/spf13/cobra"
 
-	weixinch "github.com/go-kratos/blades/cmd/blades/internal/channel/weixin"
+	weixinch "github.com/CycleZero/blades/cmd/blades/internal/channel/weixin"
 )
 
 func newWeixinCmd() *cobra.Command {

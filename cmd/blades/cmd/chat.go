@@ -7,8 +7,8 @@ import (
 	"github.com/google/uuid"
 	"github.com/spf13/cobra"
 
-	appcore "github.com/go-kratos/blades/cmd/blades/internal/app"
-	clichi "github.com/go-kratos/blades/cmd/blades/internal/channel/cli"
+	appcore "github.com/CycleZero/blades/cmd/blades/internal/app"
+	clichi "github.com/CycleZero/blades/cmd/blades/internal/channel/cli"
 )
 
 func newChatCmd() *cobra.Command {

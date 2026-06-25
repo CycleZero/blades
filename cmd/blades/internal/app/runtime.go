@@ -7,14 +7,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/cmd/blades/internal/channel"
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
-	"github.com/go-kratos/blades/cmd/blades/internal/cron"
-	"github.com/go-kratos/blades/cmd/blades/internal/logger"
-	"github.com/go-kratos/blades/cmd/blades/internal/memory"
-	"github.com/go-kratos/blades/cmd/blades/internal/session"
-	"github.com/go-kratos/blades/cmd/blades/internal/workspace"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/cmd/blades/internal/channel"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
+	"github.com/CycleZero/blades/cmd/blades/internal/cron"
+	"github.com/CycleZero/blades/cmd/blades/internal/logger"
+	"github.com/CycleZero/blades/cmd/blades/internal/memory"
+	"github.com/CycleZero/blades/cmd/blades/internal/session"
+	"github.com/CycleZero/blades/cmd/blades/internal/workspace"
 )
 
 type Runtime struct {

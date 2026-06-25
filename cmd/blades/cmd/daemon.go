@@ -9,15 +9,15 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/go-kratos/blades"
-	appcore "github.com/go-kratos/blades/cmd/blades/internal/app"
-	"github.com/go-kratos/blades/cmd/blades/internal/channel"
-	"github.com/go-kratos/blades/cmd/blades/internal/channel/lark"
-	weixinch "github.com/go-kratos/blades/cmd/blades/internal/channel/weixin"
-	"github.com/go-kratos/blades/cmd/blades/internal/cron"
-	"github.com/go-kratos/blades/cmd/blades/internal/logger"
-	"github.com/go-kratos/blades/cmd/blades/internal/memory"
-	"github.com/go-kratos/blades/cmd/blades/internal/session"
+	"github.com/CycleZero/blades"
+	appcore "github.com/CycleZero/blades/cmd/blades/internal/app"
+	"github.com/CycleZero/blades/cmd/blades/internal/channel"
+	"github.com/CycleZero/blades/cmd/blades/internal/channel/lark"
+	weixinch "github.com/CycleZero/blades/cmd/blades/internal/channel/weixin"
+	"github.com/CycleZero/blades/cmd/blades/internal/cron"
+	"github.com/CycleZero/blades/cmd/blades/internal/logger"
+	"github.com/CycleZero/blades/cmd/blades/internal/memory"
+	"github.com/CycleZero/blades/cmd/blades/internal/session"
 )
 
 var (

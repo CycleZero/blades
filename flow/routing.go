@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/internal/handoff"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/internal/handoff"
 )
 
 type RoutingConfig struct {

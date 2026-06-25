@@ -3,7 +3,7 @@ package tools
 import (
 	"fmt"
 
-	bladestools "github.com/go-kratos/blades/tools"
+	bladestools "github.com/CycleZero/blades/tools"
 )
 
 // Registry implements recipe.ToolResolver backed by a named tool map.

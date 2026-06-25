@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 )
 
 // mockAgent is an Agent mock implementation for testing

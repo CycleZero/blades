@@ -5,13 +5,13 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/go-kratos/blades"
-	bldanthropic "github.com/go-kratos/blades/contrib/anthropic"
-	bldgemini "github.com/go-kratos/blades/contrib/gemini"
-	bldopenai "github.com/go-kratos/blades/contrib/openai"
+	"github.com/CycleZero/blades"
+	bldanthropic "github.com/CycleZero/blades/contrib/anthropic"
+	bldgemini "github.com/CycleZero/blades/contrib/gemini"
+	bldopenai "github.com/CycleZero/blades/contrib/openai"
 	"google.golang.org/genai"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
 )
 
 // NewProvider creates a ModelProvider from a Provider config entry and a model name.

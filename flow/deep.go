@@ -3,9 +3,9 @@ package flow
 import (
 	"strings"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/internal/deep"
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/internal/deep"
+	"github.com/CycleZero/blades/tools"
 )
 
 // DeepConfig defines the configuration options for creating a deep agent.

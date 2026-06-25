@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/workspace"
+	"github.com/CycleZero/blades/cmd/blades/internal/workspace"
 )
 
 func TestBuildDoctorContextUsesExplicitConfigPath(t *testing.T) {

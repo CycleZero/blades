@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/go-kratos/blades/graph"
+	"github.com/CycleZero/blades/graph"
 )
 
 func flakyProcessor(maxFailures int) graph.Handler {

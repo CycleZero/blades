@@ -3,8 +3,8 @@ package counter_test
 import (
 	"testing"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/internal/counter"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/internal/counter"
 )
 
 func TestCharBasedCounter_Empty(t *testing.T) {

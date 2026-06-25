@@ -1,6 +1,6 @@
 package counter
 
-import "github.com/go-kratos/blades"
+import "github.com/CycleZero/blades"
 
 // charBasedCounter estimates tokens using character length divided by 4,
 // which is a common heuristic for English text with OpenAI-compatible models.

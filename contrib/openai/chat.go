@@ -5,12 +5,14 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"log"
+	"strings"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/tools"
 	"github.com/openai/openai-go/v3"
 	"github.com/openai/openai-go/v3/option"
 	"github.com/openai/openai-go/v3/packages/param"
+	"github.com/openai/openai-go/v3/packages/respjson"
 	"github.com/openai/openai-go/v3/shared"
 )
 
@@ -89,6 +91,7 @@ func (m *chatModel) NewStreaming(ctx context.Context, req *blades.ModelRequest) 
 		streaming := m.client.Chat.Completions.NewStreaming(ctx, params)
 		defer streaming.Close()
 		acc := openai.ChatCompletionAccumulator{}
+		var reasoningBuf strings.Builder
 		for streaming.Next() {
 			chunk := streaming.Current()
 			acc.AddChunk(chunk)
@@ -96,6 +99,9 @@ func (m *chatModel) NewStreaming(ctx context.Context, req *blades.ModelRequest) 
 			if err != nil {
 				yield(nil, err)
 				return
+			}
+			if r := message.Message.Reasoning(); r != "" {
+				reasoningBuf.WriteString(r)
 			}
 			if !yield(message, nil) {
 				return
@@ -109,6 +115,12 @@ func (m *chatModel) NewStreaming(ctx context.Context, req *blades.ModelRequest) 
 		if err != nil {
 			yield(nil, err)
 			return
+		}
+		// The accumulator does not preserve the reasoning_content extra field,
+		// so attach the reasoning gathered across the streamed deltas to the
+		// final message (unless choiceToResponse already recovered it).
+		if reasoningBuf.Len() > 0 && finalResponse.Message.Reasoning() == "" {
+			finalResponse.Message.Parts = append(finalResponse.Message.Parts, blades.ReasoningPart{Text: reasoningBuf.String()})
 		}
 		yield(finalResponse, nil)
 	}
@@ -331,6 +343,27 @@ func choiceToToolCalls(ctx context.Context, tools []*tools.Tool, choices []opena
 	}, nil
 }
 
+// reasoningContent extracts the OpenAI-compatible reasoning_content field that
+// providers such as DeepSeek return alongside the normal content. It is not part
+// of the typed SDK struct, so it is read from the raw JSON extra fields. Note
+// that Field.Valid() is false for untyped extra fields, so Raw() is the reliable
+// presence signal here.
+func reasoningContent(extra map[string]respjson.Field) string {
+	f, ok := extra["reasoning_content"]
+	if !ok {
+		return ""
+	}
+	raw := f.Raw()
+	if raw == "" || raw == "null" {
+		return ""
+	}
+	var s string
+	if err := json.Unmarshal([]byte(raw), &s); err != nil {
+		return ""
+	}
+	return s
+}
+
 // choiceToResponse converts a non-streaming choice to a ModelResponse.
 func choiceToResponse(ctx context.Context, params openai.ChatCompletionNewParams, cc *openai.ChatCompletion) (*blades.ModelResponse, error) {
 	message := blades.NewAssistantMessage(blades.StatusCompleted)
@@ -340,6 +373,9 @@ func choiceToResponse(ctx context.Context, params openai.ChatCompletionNewParams
 		TotalTokens:  cc.Usage.TotalTokens,
 	}
 	for _, choice := range cc.Choices {
+		if rc := reasoningContent(choice.Message.JSON.ExtraFields); rc != "" {
+			message.Parts = append(message.Parts, blades.ReasoningPart{Text: rc})
+		}
 		if choice.Message.Content != "" {
 			message.Parts = append(message.Parts, blades.TextPart{Text: choice.Message.Content})
 		}
@@ -368,6 +404,9 @@ func choiceToResponse(ctx context.Context, params openai.ChatCompletionNewParams
 func chunkChoiceToResponse(ctx context.Context, choices []openai.ChatCompletionChunkChoice) (*blades.ModelResponse, error) {
 	message := blades.NewAssistantMessage(blades.StatusIncomplete)
 	for _, choice := range choices {
+		if rc := reasoningContent(choice.Delta.JSON.ExtraFields); rc != "" {
+			message.Parts = append(message.Parts, blades.ReasoningPart{Text: rc})
+		}
 		if choice.Delta.Content != "" {
 			message.Parts = append(message.Parts, blades.TextPart{Text: choice.Delta.Content})
 		}

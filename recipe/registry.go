@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/tools"
 )
 
 // ModelResolver resolves model names from YAML to actual ModelProvider instances.

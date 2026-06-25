@@ -7,7 +7,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/cron"
+	"github.com/CycleZero/blades/cmd/blades/internal/cron"
 )
 
 func findHeartbeatJob(svc *cron.Service, name, message, sessionID string) *cron.Job {

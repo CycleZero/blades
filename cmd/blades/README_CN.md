@@ -22,7 +22,7 @@
 ## 安装
 
 ```sh
-git clone https://github.com/go-kratos/blades
+git clone https://github.com/CycleZero/blades
 cd blades/cmd/blades
 go install .
 ```

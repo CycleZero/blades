@@ -3,7 +3,7 @@ package blades
 import (
 	"context"
 
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades/tools"
 	"github.com/go-kratos/kit/container/maps"
 )
 

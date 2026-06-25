@@ -1,10 +1,10 @@
-module github.com/go-kratos/blades/contrib/anthropic
+module github.com/CycleZero/blades/contrib/anthropic
 
 go 1.25.0
 
 require (
+	github.com/CycleZero/blades v0.0.0-20251104140906-5d72b556bf96
 	github.com/anthropics/anthropic-sdk-go v1.26.0
-	github.com/go-kratos/blades v0.0.0-20251104140906-5d72b556bf96
 )
 
 require (
@@ -19,4 +19,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/go-kratos/blades => ../../
+replace github.com/CycleZero/blades => ../../

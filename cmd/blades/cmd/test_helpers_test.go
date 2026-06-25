@@ -8,8 +8,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	appcore "github.com/go-kratos/blades/cmd/blades/internal/app"
-	"github.com/go-kratos/blades/cmd/blades/internal/workspace"
+	appcore "github.com/CycleZero/blades/cmd/blades/internal/app"
+	"github.com/CycleZero/blades/cmd/blades/internal/workspace"
 )
 
 func setupCommandWorkspace(t *testing.T) *workspace.Workspace {

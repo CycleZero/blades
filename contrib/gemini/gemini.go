@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 	"google.golang.org/genai"
 )
 

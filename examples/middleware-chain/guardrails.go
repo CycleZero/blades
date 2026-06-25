@@ -4,8 +4,8 @@ import (
 	"context"
 	"log"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/stream"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/stream"
 )
 
 // Guardrails is a middleware that adds guardrails to the prompt.

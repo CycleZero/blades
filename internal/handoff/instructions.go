@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"html/template"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 )
 
 const handoffInstructionTemplate = `You have access to the following agents:

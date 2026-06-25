@@ -12,16 +12,16 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-kratos/blades"
-	bladestools "github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades"
+	bladestools "github.com/CycleZero/blades/tools"
 
-	appcore "github.com/go-kratos/blades/cmd/blades/internal/app"
-	"github.com/go-kratos/blades/cmd/blades/internal/channel"
-	"github.com/go-kratos/blades/cmd/blades/internal/channel/lark"
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
-	"github.com/go-kratos/blades/cmd/blades/internal/memory"
-	"github.com/go-kratos/blades/cmd/blades/internal/session"
-	"github.com/go-kratos/blades/cmd/blades/internal/workspace"
+	appcore "github.com/CycleZero/blades/cmd/blades/internal/app"
+	"github.com/CycleZero/blades/cmd/blades/internal/channel"
+	"github.com/CycleZero/blades/cmd/blades/internal/channel/lark"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
+	"github.com/CycleZero/blades/cmd/blades/internal/memory"
+	"github.com/CycleZero/blades/cmd/blades/internal/session"
+	"github.com/CycleZero/blades/cmd/blades/internal/workspace"
 	"github.com/spf13/cobra"
 )
 

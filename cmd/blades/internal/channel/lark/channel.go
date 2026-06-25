@@ -18,8 +18,8 @@ import (
 	larkim "github.com/larksuite/oapi-sdk-go/v3/service/im/v1"
 	larkws "github.com/larksuite/oapi-sdk-go/v3/ws"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/channel"
-	"github.com/go-kratos/blades/cmd/blades/internal/command"
+	"github.com/CycleZero/blades/cmd/blades/internal/channel"
+	"github.com/CycleZero/blades/cmd/blades/internal/command"
 )
 
 const channelName = "lark"

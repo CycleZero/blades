@@ -6,12 +6,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/recipe"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/recipe"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
-	bldtools "github.com/go-kratos/blades/cmd/blades/internal/tools"
-	"github.com/go-kratos/blades/cmd/blades/internal/workspace"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
+	bldtools "github.com/CycleZero/blades/cmd/blades/internal/tools"
+	"github.com/CycleZero/blades/cmd/blades/internal/workspace"
 )
 
 func TestDefaultExecWorkingDir(t *testing.T) {

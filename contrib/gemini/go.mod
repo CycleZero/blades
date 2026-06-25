@@ -1,9 +1,9 @@
-module github.com/go-kratos/blades/contrib/gemini
+module github.com/CycleZero/blades/contrib/gemini
 
 go 1.25.0
 
 require (
-	github.com/go-kratos/blades v0.0.0-20251104140906-5d72b556bf96
+	github.com/CycleZero/blades v0.0.0-20251104140906-5d72b556bf96
 	google.golang.org/genai v1.26.0
 )
 
@@ -31,4 +31,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/go-kratos/blades => ../../
+replace github.com/CycleZero/blades => ../../

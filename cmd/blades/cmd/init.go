@@ -7,10 +7,10 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	appcore "github.com/go-kratos/blades/cmd/blades/internal/app"
+	appcore "github.com/CycleZero/blades/cmd/blades/internal/app"
 	"github.com/spf13/cobra"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/workspace"
+	"github.com/CycleZero/blades/cmd/blades/internal/workspace"
 )
 
 func newInitCmd() *cobra.Command {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
 )
 
 // NewFromConfig builds a Lark channel using config values with environment

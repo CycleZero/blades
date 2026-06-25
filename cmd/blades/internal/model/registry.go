@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
 )
 
 // Registry resolves "name/model" strings using a list of Provider configs.

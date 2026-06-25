@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/cmd/blades/internal/channel"
-	"github.com/go-kratos/blades/cmd/blades/internal/session"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/cmd/blades/internal/channel"
+	"github.com/CycleZero/blades/cmd/blades/internal/session"
 )
 
 type fixedReplyModel struct {

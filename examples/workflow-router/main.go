@@ -8,8 +8,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/contrib/openai"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/contrib/openai"
 )
 
 // RoutingWorkflow is a workflow that routes requests to different agents based on the content of the prompt.

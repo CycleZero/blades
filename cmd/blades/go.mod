@@ -1,4 +1,4 @@
-module github.com/go-kratos/blades/cmd/blades
+module github.com/CycleZero/blades/cmd/blades
 
 go 1.25.8
 
@@ -8,10 +8,10 @@ require (
 	charm.land/glamour/v2 v2.0.0
 	charm.land/lipgloss/v2 v2.0.2
 	github.com/daemon365/weixin-clawbot v0.0.2
-	github.com/go-kratos/blades v0.4.0
-	github.com/go-kratos/blades/contrib/anthropic v0.3.0
-	github.com/go-kratos/blades/contrib/gemini v0.3.0
-	github.com/go-kratos/blades/contrib/openai v0.3.0
+	github.com/CycleZero/blades v0.4.0
+	github.com/CycleZero/blades/contrib/anthropic v0.3.0
+	github.com/CycleZero/blades/contrib/gemini v0.3.0
+	github.com/CycleZero/blades/contrib/openai v0.3.0
 	github.com/google/jsonschema-go v0.3.0
 	github.com/google/uuid v1.6.0
 	github.com/larksuite/oapi-sdk-go/v3 v3.5.3
@@ -77,9 +77,9 @@ require (
 )
 
 replace (
-	github.com/go-kratos/blades v0.4.0 => ../../
-	github.com/go-kratos/blades/contrib/anthropic v0.3.0 => ../../contrib/anthropic
-	github.com/go-kratos/blades/contrib/gemini v0.3.0 => ../../contrib/gemini
-	github.com/go-kratos/blades/contrib/mcp v0.1.0 => ../../contrib/mcp
-	github.com/go-kratos/blades/contrib/openai v0.3.0 => ../../contrib/openai
+	github.com/CycleZero/blades v0.4.0 => ../../
+	github.com/CycleZero/blades/contrib/anthropic v0.3.0 => ../../contrib/anthropic
+	github.com/CycleZero/blades/contrib/gemini v0.3.0 => ../../contrib/gemini
+	github.com/CycleZero/blades/contrib/mcp v0.1.0 => ../../contrib/mcp
+	github.com/CycleZero/blades/contrib/openai v0.3.0 => ../../contrib/openai
 )

@@ -6,7 +6,7 @@ import (
 	"slices"
 	"sync/atomic"
 
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades/tools"
 	"github.com/google/uuid"
 )
 

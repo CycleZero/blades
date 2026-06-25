@@ -6,11 +6,11 @@ import (
 	"log"
 	"os"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/context/window"
-	"github.com/go-kratos/blades/contrib/openai"
-	"github.com/go-kratos/blades/flow"
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/context/window"
+	"github.com/CycleZero/blades/contrib/openai"
+	"github.com/CycleZero/blades/flow"
+	"github.com/CycleZero/blades/tools"
 )
 
 // workflow-loop-exit demonstrates fully autonomous write-review cycles using

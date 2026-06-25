@@ -3,9 +3,9 @@ package recipe
 import (
 	"fmt"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/flow"
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/flow"
+	"github.com/CycleZero/blades/tools"
 )
 
 // BuildOption configures the Build process.

@@ -12,7 +12,7 @@ import (
 	larkcore "github.com/larksuite/oapi-sdk-go/v3/core"
 	larkim "github.com/larksuite/oapi-sdk-go/v3/service/im/v1"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/channel"
+	"github.com/CycleZero/blades/cmd/blades/internal/channel"
 )
 
 // CardWriter implements channel.Writer using Lark card messages for streaming.

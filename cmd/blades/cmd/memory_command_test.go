@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/memory"
+	"github.com/CycleZero/blades/cmd/blades/internal/memory"
 )
 
 func TestMemoryCommandsAddShowAndSearch(t *testing.T) {

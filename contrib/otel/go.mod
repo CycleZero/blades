@@ -1,9 +1,9 @@
-module github.com/go-kratos/blades/contrib/otel
+module github.com/CycleZero/blades/contrib/otel
 
 go 1.25.0
 
 require (
-	github.com/go-kratos/blades v0.0.0-20251104140906-5d72b556bf96
+	github.com/CycleZero/blades v0.0.0-20251104140906-5d72b556bf96
 	go.opentelemetry.io/otel v1.38.0
 	go.opentelemetry.io/otel/trace v1.38.0
 )
@@ -20,4 +20,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/go-kratos/blades => ../..
+replace github.com/CycleZero/blades => ../..

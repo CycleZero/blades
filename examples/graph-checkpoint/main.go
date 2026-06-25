@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/go-kratos/blades/graph"
+	"github.com/CycleZero/blades/graph"
 )
 
 var ErrProcessApproval = errors.New("approval is required")

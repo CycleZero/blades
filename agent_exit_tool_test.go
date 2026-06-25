@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	bladestools "github.com/go-kratos/blades/tools"
+	bladestools "github.com/CycleZero/blades/tools"
 )
 
 type exitToolLoopModel struct {

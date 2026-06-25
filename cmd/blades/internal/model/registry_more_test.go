@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
 )
 
 func TestRegistryResolveAdditionalPaths(t *testing.T) {

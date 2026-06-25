@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
+	"github.com/CycleZero/blades"
 	anthropic "github.com/anthropics/anthropic-sdk-go"
-	"github.com/go-kratos/blades"
 )
 
 func TestToClaudeParamsAssistantRole(t *testing.T) {

@@ -1,8 +1,8 @@
 <p align="center">
-    <a href="https://github.com/go-kratos/blades/actions"><img src="https://github.com/go-kratos/blades/workflows/Go/badge.svg" alt="Build Status"></a>
-    <a href="https://pkg.go.dev/github.com/go-kratos/blades"><img src="https://pkg.go.dev/badge/github.com/go-kratos/blades" alt="GoDoc"></a>
-    <a href="https://deepwiki.com/go-kratos/blades"><img src="https://deepwiki.com/badge.svg" alt="DeepWiki"></a>
-    <a href="https://github.com/go-kratos/blades/blob/main/LICENSE"><img src="https://img.shields.io/github/license/go-kratos/blades" alt="License"></a>
+    <a href="https://github.com/CycleZero/blades/actions"><img src="https://github.com/CycleZero/blades/workflows/Go/badge.svg" alt="Build Status"></a>
+    <a href="https://pkg.go.dev/github.com/CycleZero/blades"><img src="https://pkg.go.dev/badge/github.com/CycleZero/blades" alt="GoDoc"></a>
+    <a href="https://deepwiki.com/CycleZero/blades"><img src="https://deepwiki.com/badge.svg" alt="DeepWiki"></a>
+    <a href="https://github.com/CycleZero/blades/blob/main/LICENSE"><img src="https://img.shields.io/github/license/CycleZero/blades" alt="License"></a>
 </p>
 
 ## Blades
@@ -91,8 +91,8 @@ import (
     "log"
     "os"
 
-    "github.com/go-kratos/blades"
-    "github.com/go-kratos/blades/contrib/openai"
+    "github.com/CycleZero/blades"
+    "github.com/CycleZero/blades/contrib/openai"
 )
 
 func main() {
@@ -129,8 +129,8 @@ package main
 import (
     "embed"
 
-    "github.com/go-kratos/blades"
-    "github.com/go-kratos/blades/skills"
+    "github.com/CycleZero/blades"
+    "github.com/CycleZero/blades/skills"
 )
 
 //go:embed example-skill/*

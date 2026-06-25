@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"testing"
 
-	bladestools "github.com/go-kratos/blades/tools"
+	bladestools "github.com/CycleZero/blades/tools"
 )
 
 func TestAgentExecuteToolsMarksToolPartCompleted(t *testing.T) {

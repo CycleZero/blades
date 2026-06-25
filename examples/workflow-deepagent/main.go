@@ -6,10 +6,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/contrib/openai"
-	"github.com/go-kratos/blades/flow"
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/contrib/openai"
+	"github.com/CycleZero/blades/flow"
+	"github.com/CycleZero/blades/tools"
 )
 
 // SearchRequest represents a search request

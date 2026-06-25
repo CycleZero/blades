@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 )
 
 type Logging struct {

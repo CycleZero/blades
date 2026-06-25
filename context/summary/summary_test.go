@@ -5,9 +5,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/context/summary"
-	"github.com/go-kratos/blades/internal/counter"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/context/summary"
+	"github.com/CycleZero/blades/internal/counter"
 )
 
 func TestContextCompressor_BelowBudget(t *testing.T) {

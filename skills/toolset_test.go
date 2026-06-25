@@ -11,7 +11,7 @@ import (
 	"strings"
 	"testing"
 
-	bladestools "github.com/go-kratos/blades/tools"
+	bladestools "github.com/CycleZero/blades/tools"
 )
 
 type minimalSkill struct {

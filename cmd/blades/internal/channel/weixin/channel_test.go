@@ -7,7 +7,7 @@ import (
 
 	wx "github.com/daemon365/weixin-clawbot"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/channel"
+	"github.com/CycleZero/blades/cmd/blades/internal/channel"
 )
 
 func TestHandleMessagesContinuesAfterHandlerError(t *testing.T) {

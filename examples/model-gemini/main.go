@@ -5,9 +5,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/contrib/gemini"
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/contrib/gemini"
+	"github.com/CycleZero/blades/tools"
 	"google.golang.org/genai"
 )
 

@@ -7,9 +7,9 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/contrib/openai"
-	"github.com/go-kratos/blades/evaluator"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/contrib/openai"
+	"github.com/CycleZero/blades/evaluator"
 )
 
 func buildPrompt(params map[string]any) (string, error) {

@@ -9,7 +9,7 @@ import (
 	semconv "go.opentelemetry.io/otel/semconv/v1.34.0"
 	"go.opentelemetry.io/otel/trace"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 )
 
 const (

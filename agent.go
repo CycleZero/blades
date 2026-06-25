@@ -10,8 +10,8 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/go-kratos/blades/skills"
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades/skills"
+	"github.com/CycleZero/blades/tools"
 	"github.com/go-kratos/kit/container/maps"
 	"github.com/google/jsonschema-go/jsonschema"
 	"golang.org/x/sync/errgroup"

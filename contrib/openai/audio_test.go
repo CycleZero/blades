@@ -5,7 +5,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 )
 
 func TestNewAudioSetsModelName(t *testing.T) {

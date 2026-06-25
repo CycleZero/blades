@@ -3,7 +3,7 @@ package memory
 import (
 	"context"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 )
 
 // Memory represents a piece of information stored in the memory system.

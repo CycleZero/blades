@@ -1,4 +1,4 @@
-module github.com/go-kratos/blades
+module github.com/CycleZero/blades
 
 go 1.25.0
 

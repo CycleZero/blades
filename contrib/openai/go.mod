@@ -1,9 +1,9 @@
-module github.com/go-kratos/blades/contrib/openai
+module github.com/CycleZero/blades/contrib/openai
 
 go 1.25.0
 
 require (
-	github.com/go-kratos/blades v0.0.0-20251104140906-5d72b556bf96
+	github.com/CycleZero/blades v0.0.0-20251104140906-5d72b556bf96
 	github.com/openai/openai-go/v3 v3.8.1
 )
 
@@ -19,4 +19,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/go-kratos/blades => ../../
+replace github.com/CycleZero/blades => ../../

@@ -1,10 +1,10 @@
-module github.com/go-kratos/blades/cmd/docs
+module github.com/CycleZero/blades/cmd/docs
 
-go 1.24.0
+go 1.25.0
 
 require (
-	github.com/go-kratos/blades v0.4.1-0.20260310115102-d87d0212ee57
-	github.com/go-kratos/blades/contrib/openai v0.3.0
+	github.com/CycleZero/blades v0.4.1-0.20260310115102-d87d0212ee57
+	github.com/CycleZero/blades/contrib/openai v0.3.0
 	github.com/spf13/cobra v1.10.1
 )
 
@@ -21,4 +21,9 @@ require (
 	github.com/tidwall/sjson v1.2.5 // indirect
 	golang.org/x/sync v0.18.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
+)
+
+replace (
+	github.com/CycleZero/blades => ../../
+	github.com/CycleZero/blades/contrib/openai => ../../contrib/openai
 )

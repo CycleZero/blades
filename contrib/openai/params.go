@@ -3,7 +3,7 @@ package openai
 import (
 	"strings"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 )
 
 func promptFromMessages(messages []*blades.Message) string {

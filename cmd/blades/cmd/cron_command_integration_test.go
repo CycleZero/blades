@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/cron"
+	"github.com/CycleZero/blades/cmd/blades/internal/cron"
 )
 
 func TestCronCommandsListRemoveAndHeartbeat(t *testing.T) {

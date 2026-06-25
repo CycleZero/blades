@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/cmd/blades/internal/cron"
-	bladestools "github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/cmd/blades/internal/cron"
+	bladestools "github.com/CycleZero/blades/tools"
 )
 
 type fixedIDSession struct {

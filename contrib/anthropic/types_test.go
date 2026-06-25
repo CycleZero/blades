@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
+	"github.com/CycleZero/blades"
 	anthropicSDK "github.com/anthropics/anthropic-sdk-go"
-	"github.com/go-kratos/blades"
 )
 
 func TestConvertClaudeToBladesToolUseRole(t *testing.T) {

@@ -5,9 +5,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/context/summary"
-	"github.com/go-kratos/blades/contrib/openai"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/context/summary"
+	"github.com/CycleZero/blades/contrib/openai"
 )
 
 // This example demonstrates the summary ContextCompressor, which compresses old

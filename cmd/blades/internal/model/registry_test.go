@@ -3,7 +3,7 @@ package model
 import (
 	"testing"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
 )
 
 func TestRegistryResolveByProviderName(t *testing.T) {

@@ -3,7 +3,7 @@ package middleware
 import (
 	"context"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 )
 
 // ConfirmFunc is a callback used by the confirmation middleware

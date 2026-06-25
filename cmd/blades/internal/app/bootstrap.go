@@ -6,10 +6,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
-	"github.com/go-kratos/blades/cmd/blades/internal/cron"
-	"github.com/go-kratos/blades/cmd/blades/internal/memory"
-	"github.com/go-kratos/blades/cmd/blades/internal/workspace"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
+	"github.com/CycleZero/blades/cmd/blades/internal/cron"
+	"github.com/CycleZero/blades/cmd/blades/internal/memory"
+	"github.com/CycleZero/blades/cmd/blades/internal/workspace"
 )
 
 type Options struct {

@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/internal/counter"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/internal/counter"
 )
 
 // Session state keys used to persist compression state across runs.

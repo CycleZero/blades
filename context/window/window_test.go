@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/context/window"
-	"github.com/go-kratos/blades/internal/counter"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/context/window"
+	"github.com/CycleZero/blades/internal/counter"
 )
 
 func TestContextCompressor_NoLimits(t *testing.T) {

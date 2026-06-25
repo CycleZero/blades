@@ -5,9 +5,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/contrib/anthropic"
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/contrib/anthropic"
+	"github.com/CycleZero/blades/tools"
 )
 
 // WeatherReq represents a request for weather information.

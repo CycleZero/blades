@@ -5,7 +5,7 @@ Google Gemini model provider for the Blades AI Agent framework, supporting both 
 ## Installation
 
 ```bash
-go get github.com/go-kratos/blades/contrib/gemini
+go get github.com/CycleZero/blades/contrib/gemini
 ```
 
 ## Features
@@ -23,8 +23,8 @@ go get github.com/go-kratos/blades/contrib/gemini
 ```go
 import (
 	"context"
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/contrib/gemini"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/contrib/gemini"
 	"google.golang.org/genai"
 )
 
@@ -99,7 +99,7 @@ client, err := gemini.NewClient(context.Background(), clientConfig)
 Enable Gemini's reasoning capabilities with thinking models:
 
 ```go
-import "github.com/go-kratos/blades"
+import "github.com/CycleZero/blades"
 
 // Configure thinking budget
 thinkingBudget := int32(10000) // 10K tokens for reasoning
@@ -204,7 +204,7 @@ if err := stream.Err(); err != nil {
 The provider returns specific errors for common issues:
 
 ```go
-import "github.com/go-kratos/blades/contrib/gemini"
+import "github.com/CycleZero/blades/contrib/gemini"
 
 resp, err := client.Generate(ctx, req)
 if err != nil {

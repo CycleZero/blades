@@ -1,23 +1,23 @@
-module github.com/go-kratos/blades/examples
+module github.com/CycleZero/blades/examples
 
 go 1.25.0
 
 replace (
-	github.com/go-kratos/blades => ../
-	github.com/go-kratos/blades/contrib/anthropic => ../contrib/anthropic
-	github.com/go-kratos/blades/contrib/gemini => ../contrib/gemini
-	github.com/go-kratos/blades/contrib/mcp => ../contrib/mcp
-	github.com/go-kratos/blades/contrib/openai => ../contrib/openai
-	github.com/go-kratos/blades/contrib/otel => ../contrib/otel
+	github.com/CycleZero/blades => ../
+	github.com/CycleZero/blades/contrib/anthropic => ../contrib/anthropic
+	github.com/CycleZero/blades/contrib/gemini => ../contrib/gemini
+	github.com/CycleZero/blades/contrib/mcp => ../contrib/mcp
+	github.com/CycleZero/blades/contrib/openai => ../contrib/openai
+	github.com/CycleZero/blades/contrib/otel => ../contrib/otel
 )
 
 require (
-	github.com/go-kratos/blades v0.0.0
-	github.com/go-kratos/blades/contrib/anthropic v0.0.0-00010101000000-000000000000
-	github.com/go-kratos/blades/contrib/gemini v0.0.0-00010101000000-000000000000
-	github.com/go-kratos/blades/contrib/mcp v0.0.0-20251106103709-242709515a73
-	github.com/go-kratos/blades/contrib/openai v0.0.0-20251106103709-242709515a73
-	github.com/go-kratos/blades/contrib/otel v0.0.0-20251106103709-242709515a73
+	github.com/CycleZero/blades v0.0.0
+	github.com/CycleZero/blades/contrib/anthropic v0.0.0-00010101000000-000000000000
+	github.com/CycleZero/blades/contrib/gemini v0.0.0-00010101000000-000000000000
+	github.com/CycleZero/blades/contrib/mcp v0.0.0-20251106103709-242709515a73
+	github.com/CycleZero/blades/contrib/openai v0.0.0-20251106103709-242709515a73
+	github.com/CycleZero/blades/contrib/otel v0.0.0-20251106103709-242709515a73
 	github.com/google/jsonschema-go v0.3.0
 	go.opentelemetry.io/otel v1.38.0
 	go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.38.0

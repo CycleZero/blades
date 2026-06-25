@@ -3,7 +3,7 @@ package evaluator
 import (
 	"context"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 )
 
 // Feedback provides structured feedback on the evaluation results.

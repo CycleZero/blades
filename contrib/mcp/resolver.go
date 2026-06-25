@@ -7,7 +7,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades/tools"
 )
 
 // ToolsResolver manages multiple MCP server connections and provides unified tool access.

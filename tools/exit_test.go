@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades/tools"
 )
 
 // mockToolContext is a minimal ToolContext for testing.

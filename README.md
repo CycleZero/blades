@@ -1,19 +1,18 @@
 <p align="center">
-    <a href="https://github.com/go-kratos/blades/actions"><img src="https://github.com/go-kratos/blades/workflows/Go/badge.svg" alt="Build Status"></a>
-    <a href="https://pkg.go.dev/github.com/go-kratos/blades"><img src="https://pkg.go.dev/badge/github.com/go-kratos/blades" alt="GoDoc"></a>
-    <a href="https://deepwiki.com/go-kratos/blades"><img src="https://deepwiki.com/badge.svg" alt="DeepWiki"></a>
-    <a href="https://github.com/go-kratos/blades/blob/main/LICENSE"><img src="https://img.shields.io/github/license/go-kratos/blades" alt="License"></a>
+    <a href="https://github.com/CycleZero/blades/actions"><img src="https://github.com/CycleZero/blades/workflows/Go/badge.svg" alt="Build Status"></a>
+    <a href="https://pkg.go.dev/github.com/CycleZero/blades"><img src="https://pkg.go.dev/badge/github.com/CycleZero/blades" alt="GoDoc"></a>
+    <a href="https://deepwiki.com/CycleZero/blades"><img src="https://deepwiki.com/badge.svg" alt="DeepWiki"></a>
+    <a href="https://github.com/CycleZero/blades/blob/main/LICENSE"><img src="https://img.shields.io/github/license/CycleZero/blades" alt="License"></a>
 </p>
 
-> **⚠️ 这是 [go-kratos/blades](https://github.com/go-kratos/blades) 的独立 Fork，用于个人定制开发。**
-> 
-> **主要改动方向：**
+> **⚠️ CycleZero/blades —— 独立维护的 Go 多模态 AI Agent 框架。**
+>
+> **主要特性方向：**
 > - 推理内容（reasoning_content）回传支持
 > - 会话状态注入与持久化
 > - 对话历史序列化/反序列化
-> - 与上游保持独立演进，不接受合并
 >
-> **原项目许可证：** MIT
+> **许可证：** MIT，基于 [go-kratos/blades](https://github.com/go-kratos/blades) 二次开发。
 
 ## Blades
 Blades is a multimodal AI Agent framework for the Go language, supporting custom models, tools, memory, middleware, etc. It is suitable for multi-turn conversations, chain-of-thought reasoning, and structured output, among other use cases.
@@ -101,8 +100,8 @@ import (
     "log"
     "os"
 
-    "github.com/go-kratos/blades"
-    "github.com/go-kratos/blades/contrib/openai"
+    "github.com/CycleZero/blades"
+    "github.com/CycleZero/blades/contrib/openai"
 )
 
 func main() {
@@ -139,8 +138,8 @@ package main
 import (
     "embed"
 
-    "github.com/go-kratos/blades"
-    "github.com/go-kratos/blades/skills"
+    "github.com/CycleZero/blades"
+    "github.com/CycleZero/blades/skills"
 )
 
 //go:embed example-skill/*

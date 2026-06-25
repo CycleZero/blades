@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 )
 
 type routeSelectorModel struct{}

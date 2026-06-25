@@ -61,7 +61,7 @@ func TestStoreReadWriteAppendAndSearch(t *testing.T) {
 		t.Fatalf("daily log = %s", string(logData))
 	}
 
-	yesterday := time.Now().Add(-24 * time.Hour).Format("2006-01-02") + ".md"
+	yesterday := time.Now().Add(-24*time.Hour).Format("2006-01-02") + ".md"
 	if err := os.WriteFile(filepath.Join(memoriesDir, yesterday), []byte("# old\n\nlegacy line\n"), 0o644); err != nil {
 		t.Fatalf("write old log: %v", err)
 	}

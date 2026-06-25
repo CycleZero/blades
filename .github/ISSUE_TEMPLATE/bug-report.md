@@ -9,7 +9,7 @@ assignees: ''
 
 <!--
 Please answer these questions before submitting your issue. Thanks!
-For questions please use one of our forums: https://github.com/go-kratos/blades
+For questions please use one of our forums: https://github.com/CycleZero/blades
 -->
 #### What happened:
 

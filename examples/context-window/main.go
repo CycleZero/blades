@@ -5,9 +5,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/context/window"
-	"github.com/go-kratos/blades/contrib/openai"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/context/window"
+	"github.com/CycleZero/blades/contrib/openai"
 )
 
 // This example demonstrates the window ContextCompressor, which keeps only the

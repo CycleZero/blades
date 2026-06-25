@@ -1,6 +1,6 @@
 package cmd
 
-import "github.com/go-kratos/blades/cmd/blades/internal/channel"
+import "github.com/CycleZero/blades/cmd/blades/internal/channel"
 
 type textWriter struct {
 	writeText func(string)

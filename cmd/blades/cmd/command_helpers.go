@@ -10,9 +10,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	appcore "github.com/go-kratos/blades/cmd/blades/internal/app"
-	"github.com/go-kratos/blades/cmd/blades/internal/cron"
-	"github.com/go-kratos/blades/cmd/blades/internal/memory"
+	appcore "github.com/CycleZero/blades/cmd/blades/internal/app"
+	"github.com/CycleZero/blades/cmd/blades/internal/cron"
+	"github.com/CycleZero/blades/cmd/blades/internal/memory"
 )
 
 type memoryCommandFunc func(cmd *cobra.Command, mem *memory.Store, args []string) error

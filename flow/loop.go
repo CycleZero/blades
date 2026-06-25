@@ -3,8 +3,8 @@ package flow
 import (
 	"context"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/tools"
 )
 
 // LoopState captures the observable state available to a LoopCondition.

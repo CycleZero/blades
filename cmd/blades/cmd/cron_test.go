@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	appcore "github.com/go-kratos/blades/cmd/blades/internal/app"
-	"github.com/go-kratos/blades/cmd/blades/internal/cron"
+	appcore "github.com/CycleZero/blades/cmd/blades/internal/app"
+	"github.com/CycleZero/blades/cmd/blades/internal/cron"
 )
 
 func TestParseDelayValue(t *testing.T) {

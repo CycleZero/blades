@@ -5,7 +5,7 @@ Anthropic Claude model provider for the Blades AI Agent framework, supporting Di
 ## Installation
 
 ```bash
-go get github.com/go-kratos/blades/contrib/claude
+go get github.com/CycleZero/blades/contrib/claude
 ```
 
 ## Features
@@ -24,8 +24,8 @@ go get github.com/go-kratos/blades/contrib/claude
 import (
 	"context"
 	"github.com/anthropics/anthropic-sdk-go/option"
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/contrib/claude"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/contrib/claude"
 )
 
 // Create client with API key
@@ -66,7 +66,7 @@ for _, msg := range resp.Messages {
 ```go
 import (
 	"github.com/anthropics/anthropic-sdk-go/option/bedrock"
-	"github.com/go-kratos/blades/contrib/claude"
+	"github.com/CycleZero/blades/contrib/claude"
 )
 
 // Create client with AWS Bedrock
@@ -82,7 +82,7 @@ client := claude.NewClient(
 ```go
 import (
 	"github.com/anthropics/anthropic-sdk-go/option/vertex"
-	"github.com/go-kratos/blades/contrib/claude"
+	"github.com/CycleZero/blades/contrib/claude"
 )
 
 // Create client with Google Vertex AI
@@ -102,7 +102,7 @@ client := claude.NewClient(
 Enable Claude's reasoning capabilities with extended thinking using the standard API:
 
 ```go
-import "github.com/go-kratos/blades"
+import "github.com/CycleZero/blades"
 
 // Configure thinking budget
 thinkingBudget := int32(10000) // 10K tokens for reasoning
@@ -206,7 +206,7 @@ if err := stream.Err(); err != nil {
 The provider returns specific errors for common issues:
 
 ```go
-import "github.com/go-kratos/blades/contrib/claude"
+import "github.com/CycleZero/blades/contrib/claude"
 
 resp, err := client.Generate(ctx, req)
 if err != nil {

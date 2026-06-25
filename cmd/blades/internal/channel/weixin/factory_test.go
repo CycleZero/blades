@@ -8,7 +8,7 @@ import (
 
 	wx "github.com/daemon365/weixin-clawbot"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
 )
 
 func TestNewFromConfigUsesEnvFallbacks(t *testing.T) {

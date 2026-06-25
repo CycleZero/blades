@@ -7,19 +7,19 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/go-kratos/blades"
-	recipeMiddleware "github.com/go-kratos/blades/middleware"
-	"github.com/go-kratos/blades/recipe"
-	bladeskills "github.com/go-kratos/blades/skills"
-	bladestools "github.com/go-kratos/blades/tools"
-	coretools "github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades"
+	recipeMiddleware "github.com/CycleZero/blades/middleware"
+	"github.com/CycleZero/blades/recipe"
+	bladeskills "github.com/CycleZero/blades/skills"
+	bladestools "github.com/CycleZero/blades/tools"
+	coretools "github.com/CycleZero/blades/tools"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
-	"github.com/go-kratos/blades/cmd/blades/internal/cron"
-	"github.com/go-kratos/blades/cmd/blades/internal/model"
-	"github.com/go-kratos/blades/cmd/blades/internal/session"
-	bldtools "github.com/go-kratos/blades/cmd/blades/internal/tools"
-	"github.com/go-kratos/blades/cmd/blades/internal/workspace"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
+	"github.com/CycleZero/blades/cmd/blades/internal/cron"
+	"github.com/CycleZero/blades/cmd/blades/internal/model"
+	"github.com/CycleZero/blades/cmd/blades/internal/session"
+	bldtools "github.com/CycleZero/blades/cmd/blades/internal/tools"
+	"github.com/CycleZero/blades/cmd/blades/internal/workspace"
 )
 
 func BuildRunner(cfg *config.Config, ws *workspace.Workspace, cronSvc *cron.Service, extraTools ...bladestools.Tool) (*blades.Runner, error) {

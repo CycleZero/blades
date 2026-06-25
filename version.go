@@ -4,7 +4,7 @@ import "runtime/debug"
 
 var (
 	// Version is the current blades version.
-	Version = buildVersion("github.com/go-kratos/blades")
+	Version = buildVersion("github.com/CycleZero/blades")
 )
 
 // buildVersion retrieves the version of the specified module path from build info.

@@ -6,11 +6,11 @@ import (
 	"strings"
 	"time"
 
-	appcore "github.com/go-kratos/blades/cmd/blades/internal/app"
+	appcore "github.com/CycleZero/blades/cmd/blades/internal/app"
 	robfigcron "github.com/robfig/cron/v3"
 	"github.com/spf13/cobra"
 
-	"github.com/go-kratos/blades/cmd/blades/internal/cron"
+	"github.com/CycleZero/blades/cmd/blades/internal/cron"
 )
 
 const (

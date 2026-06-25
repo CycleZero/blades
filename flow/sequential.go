@@ -3,7 +3,7 @@ package flow
 import (
 	"context"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 )
 
 // SequentialConfig is the configuration for a SequentialAgent.

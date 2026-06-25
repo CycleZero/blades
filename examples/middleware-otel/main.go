@@ -12,9 +12,9 @@ import (
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.34.0"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/contrib/openai"
-	middleware "github.com/go-kratos/blades/contrib/otel"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/contrib/openai"
+	middleware "github.com/CycleZero/blades/contrib/otel"
 )
 
 func main() {

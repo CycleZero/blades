@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/go-kratos/blades/graph"
+	"github.com/CycleZero/blades/graph"
 )
 
 func logger(name string) graph.Handler {

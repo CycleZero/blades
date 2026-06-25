@@ -6,16 +6,16 @@ import (
 	"os"
 	"testing"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/recipe"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/recipe"
 
-	appcore "github.com/go-kratos/blades/cmd/blades/internal/app"
-	"github.com/go-kratos/blades/cmd/blades/internal/channel"
-	clichi "github.com/go-kratos/blades/cmd/blades/internal/channel/cli"
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
-	"github.com/go-kratos/blades/cmd/blades/internal/session"
-	bldtools "github.com/go-kratos/blades/cmd/blades/internal/tools"
-	"github.com/go-kratos/blades/cmd/blades/internal/workspace"
+	appcore "github.com/CycleZero/blades/cmd/blades/internal/app"
+	"github.com/CycleZero/blades/cmd/blades/internal/channel"
+	clichi "github.com/CycleZero/blades/cmd/blades/internal/channel/cli"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
+	"github.com/CycleZero/blades/cmd/blades/internal/session"
+	bldtools "github.com/CycleZero/blades/cmd/blades/internal/tools"
+	"github.com/CycleZero/blades/cmd/blades/internal/workspace"
 )
 
 type fixedReplyAgent struct {

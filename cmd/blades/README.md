@@ -23,7 +23,7 @@
 
 ```sh
 # From source (requires Go 1.24+)
-git clone https://github.com/go-kratos/blades
+git clone https://github.com/CycleZero/blades
 cd blades/cmd/blades
 go install .
 ```

@@ -3,7 +3,7 @@ package memory
 import (
 	"context"
 
-	"github.com/go-kratos/blades/tools"
+	"github.com/CycleZero/blades/tools"
 )
 
 // Request is the request for the memory tool.

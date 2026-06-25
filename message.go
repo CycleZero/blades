@@ -1,6 +1,7 @@
 package blades
 
 import (
+	"encoding/json"
 	"fmt"
 	"maps"
 	"slices"
@@ -72,15 +73,24 @@ func NewToolPart(id, name, request string) ToolPart {
 	}
 }
 
+// ReasoningPart is the model's reasoning / chain-of-thought content.
+// It is surfaced to callers for observability but is deliberately excluded
+// from Message.Text(), so it never becomes part of the answer and is never
+// echoed back to the model on subsequent turns.
+type ReasoningPart struct {
+	Text string `json:"text"`
+}
+
 // Part is a part of a message, which can be text or a file.
 type Part interface {
 	isPart()
 }
 
-func (TextPart) isPart() {}
-func (FilePart) isPart() {}
-func (DataPart) isPart() {}
-func (ToolPart) isPart() {}
+func (TextPart) isPart()      {}
+func (FilePart) isPart()      {}
+func (DataPart) isPart()      {}
+func (ToolPart) isPart()      {}
+func (ReasoningPart) isPart() {}
 
 // TokenUsage tracks token consumption for a message.
 type TokenUsage struct {
@@ -114,6 +124,18 @@ func (m *Message) Text() string {
 		}
 	}
 	return strings.TrimSuffix(buf.String(), "\n")
+}
+
+// Reasoning returns the concatenated reasoning / chain-of-thought content of
+// the message, or an empty string if the model produced none.
+func (m *Message) Reasoning() string {
+	var buf strings.Builder
+	for _, part := range m.Parts {
+		if r, ok := part.(ReasoningPart); ok {
+			buf.WriteString(r.Text)
+		}
+	}
+	return buf.String()
 }
 
 // File returns the first file part of the message, or nil if none exists.
@@ -158,6 +180,8 @@ func (m *Message) String() string {
 		switch v := part.(type) {
 		case TextPart:
 			buf.WriteString("[Text: " + v.Text + "]")
+		case ReasoningPart:
+			buf.WriteString("[Reasoning: " + v.Text + "]")
 		case FilePart:
 			buf.WriteString("[File: " + v.Name + " (" + string(v.MIMEType) + ")]")
 		case DataPart:
@@ -209,6 +233,8 @@ func NewMessageParts(inputs ...any) []Part {
 		case string:
 			parts = append(parts, TextPart{v})
 		case TextPart:
+			parts = append(parts, v)
+		case ReasoningPart:
 			parts = append(parts, v)
 		case FilePart:
 			parts = append(parts, v)
@@ -264,4 +290,125 @@ func AppendMessages(base []*Message, extra ...*Message) []*Message {
 		}
 	}
 	return append(filtered, extra...)
+}
+
+// jsonPart is the wire representation of a Part. The explicit Type tag allows
+// the sealed Part interface to be round-tripped through encoding/json, which
+// cannot otherwise unmarshal into an interface slice. This makes Message
+// directly persistable by any custom Session implementation via json.Marshal /
+// json.Unmarshal, with reasoning content preserved.
+type jsonPart struct {
+	Type      string   `json:"type"`
+	Text      string   `json:"text,omitempty"`
+	Name      string   `json:"name,omitempty"`
+	URI       string   `json:"uri,omitempty"`
+	MIMEType  MIMEType `json:"mimeType,omitempty"`
+	Bytes     []byte   `json:"bytes,omitempty"`
+	ID        string   `json:"id,omitempty"`
+	Request   string   `json:"arguments,omitempty"`
+	Response  string   `json:"result,omitempty"`
+	Completed bool     `json:"completed,omitempty"`
+}
+
+// messageJSON mirrors Message but encodes Parts with explicit type tags.
+type messageJSON struct {
+	ID           string         `json:"id"`
+	Role         Role           `json:"role"`
+	Parts        []jsonPart     `json:"parts"`
+	Author       string         `json:"author"`
+	InvocationID string         `json:"invocationId,omitempty"`
+	Status       Status         `json:"status"`
+	FinishReason string         `json:"finishReason,omitempty"`
+	TokenUsage   TokenUsage     `json:"tokenUsage,omitempty"`
+	Actions      map[string]any `json:"actions,omitempty"`
+	Metadata     map[string]any `json:"metadata,omitempty"`
+}
+
+// MarshalJSON encodes the message, tagging each part with its concrete type so
+// the parts can be restored by UnmarshalJSON.
+func (m *Message) MarshalJSON() ([]byte, error) {
+	return json.Marshal(messageJSON{
+		ID:           m.ID,
+		Role:         m.Role,
+		Parts:        partsToJSON(m.Parts),
+		Author:       m.Author,
+		InvocationID: m.InvocationID,
+		Status:       m.Status,
+		FinishReason: m.FinishReason,
+		TokenUsage:   m.TokenUsage,
+		Actions:      m.Actions,
+		Metadata:     m.Metadata,
+	})
+}
+
+// UnmarshalJSON decodes a message previously produced by MarshalJSON,
+// restoring each Part from its type tag.
+func (m *Message) UnmarshalJSON(data []byte) error {
+	var aux messageJSON
+	if err := json.Unmarshal(data, &aux); err != nil {
+		return err
+	}
+	parts, err := partsFromJSON(aux.Parts)
+	if err != nil {
+		return err
+	}
+	m.ID = aux.ID
+	m.Role = aux.Role
+	m.Parts = parts
+	m.Author = aux.Author
+	m.InvocationID = aux.InvocationID
+	m.Status = aux.Status
+	m.FinishReason = aux.FinishReason
+	m.TokenUsage = aux.TokenUsage
+	m.Actions = aux.Actions
+	m.Metadata = aux.Metadata
+	return nil
+}
+
+// partsToJSON converts typed Parts into their tagged wire representation.
+func partsToJSON(parts []Part) []jsonPart {
+	if len(parts) == 0 {
+		return nil
+	}
+	out := make([]jsonPart, 0, len(parts))
+	for _, part := range parts {
+		switch v := part.(type) {
+		case TextPart:
+			out = append(out, jsonPart{Type: "text", Text: v.Text})
+		case ReasoningPart:
+			out = append(out, jsonPart{Type: "reasoning", Text: v.Text})
+		case FilePart:
+			out = append(out, jsonPart{Type: "file", Name: v.Name, URI: v.URI, MIMEType: v.MIMEType})
+		case DataPart:
+			out = append(out, jsonPart{Type: "data", Name: v.Name, Bytes: v.Bytes, MIMEType: v.MIMEType})
+		case ToolPart:
+			out = append(out, jsonPart{Type: "tool", ID: v.ID, Name: v.Name, Request: v.Request, Response: v.Response, Completed: v.Completed})
+		}
+	}
+	return out
+}
+
+// partsFromJSON restores typed Parts from their tagged wire representation.
+func partsFromJSON(parts []jsonPart) ([]Part, error) {
+	if len(parts) == 0 {
+		return nil, nil
+	}
+	out := make([]Part, 0, len(parts))
+	for _, part := range parts {
+		switch part.Type {
+		case "text":
+			out = append(out, TextPart{Text: part.Text})
+		case "reasoning":
+			out = append(out, ReasoningPart{Text: part.Text})
+		case "file":
+			out = append(out, FilePart{Name: part.Name, URI: part.URI, MIMEType: part.MIMEType})
+		case "data":
+			out = append(out, DataPart{Name: part.Name, Bytes: part.Bytes, MIMEType: part.MIMEType})
+		case "tool":
+			out = append(out, ToolPart{ID: part.ID, Name: part.Name, Request: part.Request, Response: part.Response, Completed: part.Completed})
+		default:
+			return nil, fmt.Errorf("blades: unknown message part type %q", part.Type)
+		}
+	}
+	return out, nil
 }

@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/tools"
 	"github.com/anthropics/anthropic-sdk-go"
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/tools"
 )
 
 // convertPartsToContent converts Blades Parts to Claude ContentBlockParamUnion.

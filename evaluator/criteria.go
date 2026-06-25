@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/go-kratos/blades"
+	"github.com/CycleZero/blades"
 	"github.com/google/jsonschema-go/jsonschema"
 )
 

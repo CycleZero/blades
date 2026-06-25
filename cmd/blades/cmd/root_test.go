@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	appcore "github.com/go-kratos/blades/cmd/blades/internal/app"
-	"github.com/go-kratos/blades/cmd/blades/internal/workspace"
+	appcore "github.com/CycleZero/blades/cmd/blades/internal/app"
+	"github.com/CycleZero/blades/cmd/blades/internal/workspace"
 )
 
 func preserveRootState(t *testing.T) {

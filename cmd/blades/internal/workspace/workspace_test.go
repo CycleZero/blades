@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-kratos/blades/recipe"
+	"github.com/CycleZero/blades/recipe"
 )
 
 func TestWorkspaceInitLoadAndReadFile(t *testing.T) {

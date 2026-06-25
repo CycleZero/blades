@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	appcore "github.com/go-kratos/blades/cmd/blades/internal/app"
+	appcore "github.com/CycleZero/blades/cmd/blades/internal/app"
 )
 
 func TestResolveInitPathsUsesHomeAndWorkspaceFlag(t *testing.T) {

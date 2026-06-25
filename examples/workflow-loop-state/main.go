@@ -6,9 +6,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/go-kratos/blades"
-	"github.com/go-kratos/blades/contrib/openai"
-	"github.com/go-kratos/blades/flow"
+	"github.com/CycleZero/blades"
+	"github.com/CycleZero/blades/contrib/openai"
+	"github.com/CycleZero/blades/flow"
 )
 
 func main() {

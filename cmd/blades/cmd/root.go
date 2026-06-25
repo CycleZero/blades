@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"time"
 
-	appcore "github.com/go-kratos/blades/cmd/blades/internal/app"
+	appcore "github.com/CycleZero/blades/cmd/blades/internal/app"
 	"github.com/spf13/cobra"
 )
 

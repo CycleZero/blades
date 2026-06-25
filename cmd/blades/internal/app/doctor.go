@@ -8,11 +8,11 @@ import (
 	"strings"
 	"time"
 
-	weixinch "github.com/go-kratos/blades/cmd/blades/internal/channel/weixin"
-	"github.com/go-kratos/blades/cmd/blades/internal/config"
-	"github.com/go-kratos/blades/cmd/blades/internal/cron"
-	"github.com/go-kratos/blades/cmd/blades/internal/workspace"
-	"github.com/go-kratos/blades/recipe"
+	weixinch "github.com/CycleZero/blades/cmd/blades/internal/channel/weixin"
+	"github.com/CycleZero/blades/cmd/blades/internal/config"
+	"github.com/CycleZero/blades/cmd/blades/internal/cron"
+	"github.com/CycleZero/blades/cmd/blades/internal/workspace"
+	"github.com/CycleZero/blades/recipe"
 )
 
 type DoctorContext struct {

@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	bladestools "github.com/go-kratos/blades/tools"
+	bladestools "github.com/CycleZero/blades/tools"
 	"github.com/google/jsonschema-go/jsonschema"
 )
 
