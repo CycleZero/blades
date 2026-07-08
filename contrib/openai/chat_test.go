@@ -145,3 +145,54 @@ func TestChunkChoiceToResponseExtractsReasoning(t *testing.T) {
 		t.Fatalf("Reasoning() = %q, want %q", got, want)
 	}
 }
+
+func TestToChatCompletionParamsPreservesReasoning(t *testing.T) {
+	model := &chatModel{model: "gpt-test"}
+	req := &blades.ModelRequest{
+		Messages: []*blades.Message{
+			blades.UserMessage("hello"),
+			{
+				Role: blades.RoleAssistant,
+				Parts: []blades.Part{
+					blades.ReasoningPart{Text: "let me think"},
+					blades.TextPart{Text: "42"},
+				},
+			},
+		},
+	}
+	params, err := model.toChatCompletionParams(false, req)
+	if err != nil {
+		t.Fatalf("toChatCompletionParams returned error: %v", err)
+	}
+	payload, err := json.Marshal(params.Messages)
+	if err != nil {
+		t.Fatalf("marshal params.Messages: %v", err)
+	}
+	if !bytes.Contains(payload, []byte(`"reasoning_content"`)) {
+		t.Fatalf("reasoning_content not found in assistant message:\n%s", payload)
+	}
+	if !bytes.Contains(payload, []byte(`"let me think"`)) {
+		t.Fatalf("reasoning text not found:\n%s", payload)
+	}
+}
+
+func TestToToolCallMessagePreservesReasoning(t *testing.T) {
+	msg := &blades.Message{
+		Role: blades.RoleTool,
+		Parts: []blades.Part{
+			blades.ReasoningPart{Text: "chain-of-thought"},
+			blades.NewToolPart("call_1", "get_weather", `{"city":"Paris"}`),
+		},
+	}
+	param := toToolCallMessage(msg)
+	payload, err := json.Marshal(param)
+	if err != nil {
+		t.Fatalf("marshal toToolCallMessage result: %v", err)
+	}
+	if !bytes.Contains(payload, []byte(`"reasoning_content"`)) {
+		t.Fatalf("reasoning_content not found in tool call assistant message:\n%s", payload)
+	}
+	if !bytes.Contains(payload, []byte(`"chain-of-thought"`)) {
+		t.Fatalf("reasoning text not found:\n%s", payload)
+	}
+}

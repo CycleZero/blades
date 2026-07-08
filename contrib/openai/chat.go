@@ -191,7 +191,14 @@ func (m *chatModel) toChatCompletionParams(isStreaming bool, req *blades.ModelRe
 		case blades.RoleUser:
 			params.Messages = append(params.Messages, openai.UserMessage(toContentParts(msg)))
 		case blades.RoleAssistant:
-			params.Messages = append(params.Messages, openai.AssistantMessage(msg.Text()))
+			assistant := &openai.ChatCompletionAssistantMessageParam{}
+			if t := msg.Text(); t != "" {
+				assistant.Content.OfString = param.NewOpt(t)
+			}
+			if r := msg.Reasoning(); r != "" {
+				assistant.SetExtraFields(map[string]any{"reasoning_content": r})
+			}
+			params.Messages = append(params.Messages, openai.ChatCompletionMessageParamUnion{OfAssistant: assistant})
 		case blades.RoleSystem:
 			params.Messages = append(params.Messages, openai.SystemMessage(toTextParts(msg)))
 		case blades.RoleTool:
@@ -224,10 +231,14 @@ func toToolCallMessage(msg *blades.Message) openai.ChatCompletionMessageParamUni
 			})
 		}
 	}
+	assistant := &openai.ChatCompletionAssistantMessageParam{
+		ToolCalls: toolCalls,
+	}
+	if r := msg.Reasoning(); r != "" {
+		assistant.SetExtraFields(map[string]any{"reasoning_content": r})
+	}
 	return openai.ChatCompletionMessageParamUnion{
-		OfAssistant: &openai.ChatCompletionAssistantMessageParam{
-			ToolCalls: toolCalls,
-		},
+		OfAssistant: assistant,
 	}
 }
 
