@@ -181,6 +181,7 @@ func TestToToolCallMessagePreservesReasoning(t *testing.T) {
 		Role: blades.RoleTool,
 		Parts: []blades.Part{
 			blades.ReasoningPart{Text: "chain-of-thought"},
+			blades.TextPart{Text: "I will look up the weather now."},
 			blades.NewToolPart("call_1", "get_weather", `{"city":"Paris"}`),
 		},
 	}
@@ -194,5 +195,8 @@ func TestToToolCallMessagePreservesReasoning(t *testing.T) {
 	}
 	if !bytes.Contains(payload, []byte(`"chain-of-thought"`)) {
 		t.Fatalf("reasoning text not found:\n%s", payload)
+	}
+	if !bytes.Contains(payload, []byte(`"I will look up the weather now."`)) {
+		t.Fatalf("content (text) not found in tool call assistant message:\n%s", payload)
 	}
 }

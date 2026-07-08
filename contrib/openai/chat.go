@@ -234,6 +234,9 @@ func toToolCallMessage(msg *blades.Message) openai.ChatCompletionMessageParamUni
 	assistant := &openai.ChatCompletionAssistantMessageParam{
 		ToolCalls: toolCalls,
 	}
+	if t := msg.Text(); t != "" {
+		assistant.Content.OfString = param.NewOpt(t)
+	}
 	if r := msg.Reasoning(); r != "" {
 		assistant.SetExtraFields(map[string]any{"reasoning_content": r})
 	}
